@@ -1,0 +1,150 @@
+$fieldMaxWidth:  330px;
+
+@mixin hoverOutline {
+  outline:rgba(44, 138, 245, 1) 1px solid;
+}
+
+@mixin borderSets {
+  border:rgba(44, 138, 245, 0) 1px solid;
+  border-radius: 4px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@mixin labelSets {
+  label {
+    font-size: 10px;
+    line-height: 13px;
+    margin-bottom: 4px;
+  }
+}
+
+@mixin errorSets {
+  #error { 
+    margin-top: 4px;
+    font-size: 8px;
+    line-height: 10px;
+    color: red;
+  }
+}
+
+.form {
+  display: flex;
+  position: fixed;
+  margin-top: 64px;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: $fieldMaxWidth;
+  min-width: $fieldMaxWidth;
+  height: fit-content;
+  border-radius: 4px;
+  padding: 0 1rem;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background: #FFFEFB;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+  margin-left: 32px;
+  
+
+  input[type="submit"] {
+    width: auto;
+    height: 36px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: rgba(0, 0, 0, 0);
+    font-size: 12px;
+  }
+
+  .default-input {
+    background: #7BAE73;
+    color: white;
+  }
+  .disabled-input {
+    background: #EEEEEE;
+    color: #B4B4B4;
+  }
+  
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    margin: .3rem 0 1rem 0;
+    height: 53px;
+
+    label {
+      @include labelSets;
+    }
+    .error-input {
+      outline: solid 1px rgba(255, 0, 0, 1.0);
+    }
+    input {
+      padding: 10px;
+      font-size: 12px;
+      width: auto;
+      @include borderSets;
+    }
+
+    input:focus {
+      outline: 1px rgba(0, 0, 0, 0) solid;
+    }
+    input[type="text"]:hover {
+      @include hoverOutline;
+    }
+
+    @include errorSets;
+  }
+
+  @include labelSets;
+  
+  .textarea-container {
+    height: 140px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    .error-input {
+      outline: solid 1px rgba(255, 0, 0, 1.0);
+    }
+    #error { 
+      margin-top: 4px;
+      font-size: 8px;
+      line-height: 10px;
+      color: red;
+    }
+  }
+
+  .textarea {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    width: 284px;
+    min-height: 110px;
+    max-height: 110px;
+    resize: none;
+    max-width: auto;
+    @include borderSets;
+  }
+
+  textarea:focus {
+    outline: 1px rgba(0, 0, 0, 0) solid;
+  }
+
+  .textarea:hover {
+    @include hoverOutline;
+  }
+
+  textarea:hover {
+    outline:rgba(44, 138, 245, 1) 1px solid;
+  }
+
+  label::after {
+    content: '*';
+    color: red;
+  }
+}
+
+
+
+
+
+

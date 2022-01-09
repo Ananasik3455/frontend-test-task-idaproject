@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFFEFB 80%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+#app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 60px 95%;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #2c3e50;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import "./header.scss";
+@import "./form.scss";
+@import "./product.scss";
+@import "./content.scss"

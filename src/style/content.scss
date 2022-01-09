@@ -1,0 +1,8 @@
+.content {
+  grid-area: 2 / 2 / span 1 / span 1;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+}
